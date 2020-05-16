@@ -1,12 +1,13 @@
 import axios from "axios";
 
 const url_global = "http://localhost:3000/summary.json";
-const india = "http://localhost:3000/india.json";
+const url_india = "http://localhost:3000/india.json";
 
 export const fetchData = async () => {
   try {
     const gdata = await axios.get(url_global);
-    const idata = await axios.get(india);
+    const idata = await axios.get(url_india);
+
     const global = {
       Confirmed: {
         data: gdata.data.Global.TotalConfirmed,
@@ -48,10 +49,49 @@ export const fetchData = async () => {
       },
     };
 
+    const india = {};
+    india.labels = [];
+    const conf = {
+      label: "Confirmed",
+      backgroundColor: "rgb(255, 255, 255, 0.1)",
+      borderColor: "#ff073a",
+      data: [],
+    };
+    const act = {
+      label: "Active",
+      backgroundColor: "rgb(255, 255, 255, 0.1)",
+      borderColor: "#007bff",
+      data: [],
+    };
+    const deaths = {
+      label: "Deaths",
+      backgroundColor: "rgb(255, 255, 255, 0.1)",
+      borderColor: "#6c757d",
+      data: [],
+    };
+    const rec = {
+      label: "Recovered",
+      backgroundColor: "rgb(255, 255, 255, 0.1)",
+      borderColor: "#28a745",
+      data: [],
+    };
+    idata.data.forEach((obj) => {
+      india.labels.push(obj.Date.replace("T00:00:00Z", ""));
+      conf.data.push(obj.Confirmed);
+      act.data.push(obj.Active);
+      rec.data.push(obj.Recovered);
+      deaths.data.push(obj.Deaths);
+    });
+    india.datasets = [];
+    india.datasets.push(conf);
+    india.datasets.push(act);
+    india.datasets.push(rec);
+    india.datasets.push(deaths);
+
     return {
       global: global,
       countries: gdata.data.Countries,
-      india: idata.data,
+      india: india,
       isummary: isummary,
     };
   } catch (error) {}

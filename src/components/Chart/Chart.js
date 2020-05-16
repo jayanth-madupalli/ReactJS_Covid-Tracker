@@ -1,7 +1,8 @@
 import React from "react";
+import { Line } from "react-chartjs-2";
 
-const Chart = () => {
-  return <h1> Chart </h1>;
+const Chart = (props) => {
+  return <Line data={props.data} />;
 };
 
 export default Chart;

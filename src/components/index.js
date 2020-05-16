@@ -1,3 +1,3 @@
 export { default as Cards } from "./Cards/Cards";
 export { default as Chart } from "./Chart/Chart";
-export { default as CountryTable } from "./CountryPicker/CountryTable";
+export { default as CountryTable } from "./CountryTable/CountryTable";

@@ -6,9 +6,11 @@ body {
   width: 95% !important;
   max-width: 95%;
   margin: auto;
+  justify-content: center;
 }
 
 .spin {
   position: absolute;
   top: 49%;
+  left: 45%;
 }
