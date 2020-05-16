@@ -1,0 +1,56 @@
+.Confirmed h1 span {
+  color: #ff073a;
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+.Confirmed h5,
+.Confirmed p {
+  font-size: 0.75rem;
+  font-weight: bold;
+  margin-bottom: 25px;
+  color: rgba(255, 7, 58);
+}
+.Active h1 span {
+  color: #007bff;
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+.Active h5 {
+  font-size: 0.75rem;
+  font-weight: bold;
+  margin-bottom: 25px;
+  color: #007bff;
+}
+.Recovered h1 span {
+  color: #28a745;
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+.Recovered h5,
+.Recovered p {
+  font-size: 0.75rem;
+  font-weight: bold;
+  margin-bottom: 25px;
+  color: rgba(40, 167, 69);
+}
+
+.Deaths h1 span {
+  color: #6c757d;
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+.Deaths h5,
+.Deaths p {
+  font-size: 0.75rem;
+  font-weight: bold;
+  margin-bottom: 25px;
+  color: #6c757d;
+}
+.counter {
+  margin: 10px;
+  padding: 20px;
+  border-radius: 4px;
+  border: 1px solid #999;
+  background-color: #fff;
+  text-align: center;
+}
