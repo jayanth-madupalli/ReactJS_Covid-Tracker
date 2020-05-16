@@ -40,20 +40,25 @@ class App extends React.Component {
           <div className="row w-100 justify-content-center">
             <Cards data={this.state.data.isummary} />
           </div>
-          <div className="row w-100 mt-5 justify-content-center">
+          <div className="row w-100 mt-5 pt-3 justify-content-center">
             <div className="col-lg-6 col-sm-12 mb-5">
-              <h4 className="col-12 text-center">Cumulated Data For India</h4>
+              <h4 className="col-12 text-center">Cumulative Data For India</h4>
               <hr className="mb-5 w-50" />
-              <Chart className="p-3" data={this.state.data.india} />
+              <Chart className="p-5" data={this.state.data.india} />
             </div>
             <div className="col-lg-6 col-sm-12">
-              <h4 className="col-12 text-center">Tabulated Global Data</h4>
+              <h4 className="col-12 text-center">Tabular Global Data</h4>
               <hr className="mb-5 w-50" />
-              <CountryTable className="p-3" data={this.state.data.countries} />
+              <div style={{ height: 420 + "px", overflow: "auto" }}>
+                <CountryTable
+                  className="p-5"
+                  data={this.state.data.countries}
+                />
+              </div>
             </div>
           </div>
         </div>
-        <div className="w-100 text-center mt-5 pt-5">
+        <div className="w-100 text-center mt-5 pt-2">
           <hr className="w-50" />
           <p className="text-muted" style={{ fontSize: 12 + "px" }}>
             Developed by JayanthM

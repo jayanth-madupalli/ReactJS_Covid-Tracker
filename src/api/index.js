@@ -88,9 +88,13 @@ export const fetchData = async () => {
     india.datasets.push(rec);
     india.datasets.push(deaths);
 
+    const countries = gdata.data.Countries.sort((c1, c2) => {
+      return c2.TotalConfirmed - c1.TotalConfirmed;
+    });
+
     return {
       global: global,
-      countries: gdata.data.Countries,
+      countries: countries,
       india: india,
       isummary: isummary,
     };
