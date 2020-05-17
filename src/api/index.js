@@ -1,13 +1,12 @@
 import axios from "axios";
 
-const url_global = "http://localhost:3000/summary.json";
-const url_india = "http://localhost:3000/india.json";
+const url_global = "https://covid19.jayanthm.in/summary.json";
+const url_india = "https://covid19.jayanthm.in/india.json";
 
 export const fetchData = async () => {
   try {
     const gdata = await axios.get(url_global);
     const idata = await axios.get(url_india);
-
     const global = {
       Confirmed: {
         data: gdata.data.Global.TotalConfirmed,
@@ -97,6 +96,7 @@ export const fetchData = async () => {
       countries: countries,
       india: india,
       isummary: isummary,
+      date: gdata.data.Date,
     };
   } catch (error) {}
 };

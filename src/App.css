@@ -3,8 +3,8 @@ body {
 }
 
 .container {
-  width: 95% !important;
-  max-width: 95%;
+  width: 97% !important;
+  max-width: 97%;
   margin: auto;
   justify-content: center;
 }
@@ -12,5 +12,19 @@ body {
 .spin {
   position: absolute;
   top: 49%;
-  left: 45%;
+  left: 49%;
+}
+
+.tableContainer {
+  overflow: auto;
+  height: 420px;
+}
+
+@media (min-width: 992px) {
+  .tableContainer {
+    height: calc(45vw / 2);
+  }
+}
+.row {
+  margin: 0;
 }

@@ -3,10 +3,10 @@ import "./CountryTable.css";
 
 const CountryTable = (props) => {
   return (
-    <table className="table table-hover tableFixHead">
+    <table className="table w-100 table-hover tableFixHead">
       <thead className="thead-light">
         <tr>
-          <th>#</th>
+          <th className="d-none d-md-table-cell">#</th>
           <th>Country</th>
           <th>Confirmed</th>
           <th>Recovered</th>
@@ -24,7 +24,7 @@ const Rows = (props) => {
   return props.rows.map((row, index) => {
     return (
       <tr key={index}>
-        <td>{index + 1}</td>
+        <td className="d-none d-md-table-cell">{index + 1}</td>
         <td>{row.Country}</td>
         <td>{row.TotalConfirmed.toLocaleString()}</td>
         <td>{row.TotalRecovered.toLocaleString()}</td>

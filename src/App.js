@@ -30,26 +30,26 @@ class App extends React.Component {
             <h4 className="col-12 text-center">Global</h4>
             <hr className="w-50" />
           </div>
-          <div className="row w-100 justify-content-center">
+          <div className="row w-100 mt-3 justify-content-center">
             <Cards data={this.state.data.global} />
           </div>
           <div className="row w-100 mt-5 justify-content-center">
             <h4 className="col-12 text-center">India</h4>
             <hr className="w-50" />
           </div>
-          <div className="row w-100 justify-content-center">
+          <div className="row w-100 mt-3 justify-content-center">
             <Cards data={this.state.data.isummary} />
           </div>
           <div className="row w-100 mt-5 pt-3 justify-content-center">
-            <div className="col-lg-6 col-sm-12 mb-5">
+            <div className="col-lg-6 col-md-12 mb-5">
               <h4 className="col-12 text-center">Cumulative Data For India</h4>
               <hr className="mb-5 w-50" />
               <Chart className="p-5" data={this.state.data.india} />
             </div>
-            <div className="col-lg-6 col-sm-12">
+            <div className="col-lg-6 col-md-12">
               <h4 className="col-12 text-center">Tabular Global Data</h4>
               <hr className="mb-5 w-50" />
-              <div style={{ height: 420 + "px", overflow: "auto" }}>
+              <div className="tableContainer">
                 <CountryTable
                   className="p-5"
                   data={this.state.data.countries}
@@ -61,6 +61,8 @@ class App extends React.Component {
         <div className="w-100 text-center mt-5 pt-2">
           <hr className="w-50" />
           <p className="text-muted" style={{ fontSize: 12 + "px" }}>
+            Last updated at {this.state.data.date.replace(/T|Z/g, " ")}.
+            <br />
             Developed by JayanthM
           </p>
         </div>
